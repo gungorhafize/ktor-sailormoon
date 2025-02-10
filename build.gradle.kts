@@ -34,4 +34,8 @@ dependencies {
     implementation(libs.ktor.server.config.yaml)
     testImplementation(libs.ktor.server.test.host)
     testImplementation(libs.kotlin.test.junit)
+    // Koin for Ktor
+    implementation(libs.koin.ktor)
+    // SLF4J Logger
+    implementation(libs.slf4j.logger)
 }

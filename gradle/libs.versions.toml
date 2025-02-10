@@ -5,6 +5,8 @@ h2-version = "2.3.232"
 kotlin-version = "2.1.10"
 ktor-version = "3.0.3"
 logback-version = "1.4.14"
+koin-version = "3.3.0"
+
 
 [libraries]
 ktor-server-default-headers = { module = "io.ktor:ktor-server-default-headers", version.ref = "ktor-version" }
@@ -21,7 +23,8 @@ logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "lo
 ktor-server-config-yaml = { module = "io.ktor:ktor-server-config-yaml", version.ref = "ktor-version" }
 ktor-server-test-host = { module = "io.ktor:ktor-server-test-host", version.ref = "ktor-version" }
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin-version" }
-
+koin-ktor = { module = "io.insert-koin:koin-ktor", version.ref = "koin-version" }
+slf4j-logger = {module = "io.insert-koin:koin-logger-slf4j", version.ref = "koin-version"}
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-version" }
 ktor = { id = "io.ktor.plugin", version.ref = "ktor-version" }
