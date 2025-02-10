@@ -1,4 +1,4 @@
-package com.hafize
+package com.hafize.plugins
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.serialization.Serializable

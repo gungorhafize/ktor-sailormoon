@@ -38,4 +38,6 @@ dependencies {
     implementation(libs.koin.ktor)
     // SLF4J Logger
     implementation(libs.slf4j.logger)
+    implementation(libs.ktor.server.call.logging)
+
 }
