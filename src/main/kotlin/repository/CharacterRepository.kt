@@ -8,5 +8,6 @@ interface CharacterRepository {
     fun add(character: Character): Boolean
     fun delete(id: Int): Boolean
     fun getTotalCount(): Int
+    fun searchByName(query: String?): List<Character>
 
 }

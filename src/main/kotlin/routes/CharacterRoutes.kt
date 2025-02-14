@@ -65,7 +65,7 @@ fun Route.characters() {
                 call.respond(HttpStatusCode.InternalServerError, ApiResponse(success = false, message = "Character could not be added."))
             }
         } catch (e: Exception) {
-            e.printStackTrace() // Hata detaylarını logla
+            e.printStackTrace()
             call.respond(HttpStatusCode.BadRequest, ApiResponse(success = false, message = "Invalid input data."))
         }
     }
@@ -78,4 +78,24 @@ fun Route.characters() {
             call.respond(HttpStatusCode.NotFound, ApiResponse(success = false, message = "Character not found."))
         }
     }
+
+
+    // Search for Characters by name
+    get("/sailormoon/characters/search") {
+        try {
+            val nameQuery = call.request.queryParameters["query"]
+            val characters = sailorMoonRepository.searchByName(nameQuery)
+
+            if (characters.isNotEmpty()) {
+                call.respond(HttpStatusCode.OK, ApiResponse(success = true, sailorMoon = characters))
+            } else {
+                call.respond(HttpStatusCode.NotFound, ApiResponse(success = false, message = "No characters found"))
+            }
+        } catch (e: Exception) {
+            call.respond(HttpStatusCode.InternalServerError, ApiResponse(success = false, message = "An error occurred during the search."))
+        }
+    }
+
 }
+
+

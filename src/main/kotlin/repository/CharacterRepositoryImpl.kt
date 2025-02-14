@@ -15,4 +15,15 @@ class CharacterRepositoryImpl : CharacterRepository {
 
     override fun delete(id: Int): Boolean = characters.removeIf { it.id == id }
     override fun getTotalCount(): Int { return characters.size }
+
+    override fun searchByName(query: String?): List<Character> {
+        val trimmedQuery = query?.trim()
+        if (trimmedQuery.isNullOrEmpty()) {
+            return characters
+        }
+        return characters.filter {
+            it.name.contains(trimmedQuery, ignoreCase = true) ||
+                    it.alias?.contains(trimmedQuery, ignoreCase = true) == true
+        }
+    }
 }
