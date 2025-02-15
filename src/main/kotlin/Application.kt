@@ -14,4 +14,5 @@ fun Application.module() {
     configureDatabases()
     configureRouting()
     configureMonitoring()
+    configureStaticContent()
 }
