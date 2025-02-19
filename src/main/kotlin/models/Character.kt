@@ -7,7 +7,7 @@ import kotlinx.serialization.Serializable
 data class Character(
     val id: Int,
     val name: String,
-    val alias: String,
+    val alias: String?,
     @SerialName("birth_date")
     val birthDate: String,
     @SerialName("height_cm")

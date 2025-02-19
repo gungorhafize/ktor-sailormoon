@@ -3,11 +3,11 @@ package com.hafize.repository
 import com.hafize.models.Character
 
 interface CharacterRepository {
-    fun getAll(page: Int, pageSize: Int): List<Character>
-    fun getById(id: Int): Character?
-    fun add(character: Character): Boolean
-    fun delete(id: Int): Boolean
-    fun getTotalCount(): Int
-    fun searchByName(query: String?): List<Character>
+    suspend fun getAll(page: Int, pageSize: Int): List<Character>
+    suspend fun getById(id: Int): Character?
+    suspend fun add(character: Character): Boolean
+    suspend fun delete(id: Int): Boolean
+    suspend fun getTotalCount(): Int
+    suspend fun searchByName(query: String?): List<Character>
 
 }
